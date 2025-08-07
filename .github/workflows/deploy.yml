@@ -1,11 +1,16 @@
-name: Deploy to Prod
-on: [push, release]
+name: DB Schema Deploy
+
+on:
+  push:
+    branches: [master]
+
 jobs:
-  deploy:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - name: Call MnM
+        run: |
           curl -X POST http://95.216.209.142:3000/deploy \
-            -H "Content-Type: application/json" \
-            -d '{"sha":"${{ github.sha }}"}'
+               -H "Content-Type: application/json" \
+               -d '{"sha":"${{ github.sha }}"}'
