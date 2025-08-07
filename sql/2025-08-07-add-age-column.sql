@@ -1,1 +1,1 @@
-ALTER TABLE app.users ADD COLUMN age integer;
+ALTER TABLE app.users ADD COLUMN ages integer;
