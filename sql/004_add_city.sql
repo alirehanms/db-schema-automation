@@ -1,1 +1,1 @@
-ALTER TABLE app.users ADD COLUMN city TEXT;
+ALTER TABLE app.users ADD COLUMN city TYPE VARCHAR(100);;
